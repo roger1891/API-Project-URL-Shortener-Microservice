@@ -121,7 +121,8 @@ app.get("/api/shorturl/:number", callBackNumber);
 //listen to port
 app.listen(port, function () {
   console.log('Node.js listening ...');
-  
+});
+
 //check whether mongo database is connected or not  
 mongoose.connection.on('open', function (ref) {
   console.log('Connected to mongo server. ' +mongoose.connection.readyState);
@@ -129,6 +130,4 @@ mongoose.connection.on('open', function (ref) {
 mongoose.connection.on('error', function (err) {
   console.log('Could not connect to mongo server! ' + mongoose.connection.readyState);
   console.log(err); 
-});
-
 });
